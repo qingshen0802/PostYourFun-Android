@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="radio_button_selected_color">#157fb4</color>
+	<color name="radio_button_unselected_color">#0c4967</color>
+
+	<color name="background_tab_pressed">#6633B5E5</color>
+
+	<color name="background_color">#062534</color>
+
+	<!-- NavBar -->
+	<color name="nav_background_color">#062534</color>
+
+	<!-- Button Color -->
+	<color name="clear_button_color">#0c4967</color>
+	<color name="clear_button_selected_color">#157fb4</color>
+
+	<!-- ListView Color -->
+	<color name="listview_header_bg_color">#0c4967</color>
+	<color name="listview_title_color">#ffffff</color>
+	<color name="listview_subtitle_color">#5b8ba0</color>
+	<color name="listview_line_color">#0c4967</color>
+
+	<!-- Tabbar -->
+	<color name="tabbar_underline_color">#05202d</color>
+	<color name="tabbar_bg_color">#0c4967</color>
+
+	<!-- Current Station -->
+	<color name="bg_color1">#157fb4</color>
+	<color name="bg_color2">#105f87</color>
+	<color name="bg_color3">#0a405a</color>
+	<color name="bg_color4">#05202d</color>
+	<color name="bg_color5">#041822</color>
+
+	<color name="line_color">#0f597e</color>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<GridView
+		android:id="@+id/grid"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:horizontalSpacing="4dip"
+		android:numColumns="3"
+		android:padding="4dip"
+		android:stretchMode="columnWidth"
+		android:verticalSpacing="4dip" />
+
+	<ImageView
+		android:id="@+id/show_image"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#80000000"
+		android:scaleType="fitCenter"
+		android:visibility="gone" />
+
+	<Button
+		android:id="@+id/buy_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="15dp"
+		android:background="@xml/button_background"
+		android:paddingLeft="40dp"
+		android:paddingRight="40dp"
+		android:text="Download and share"
+		android:textColor="@android:color/white"
+		android:visibility="gone" />
+</RelativeLayout>

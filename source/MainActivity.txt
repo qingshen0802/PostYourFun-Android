@@ -1,0 +1,100 @@
+package com.pyt.postyourfun.activity;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+
+import com.pyt.postyourfun.Fragment.BuyImageFragment;
+import com.pyt.postyourfun.Fragment.RatingFragment;
+import com.pyt.postyourfun.Fragment.ViewImageFragment;
+import com.pyt.postyourfun.Payment.PaymentController;
+import com.pyt.postyourfun.R;
+
+public class MainActivity extends FragmentActivity implements View.OnClickListener {
+
+    private Button btnRateView, btnGalleryView, btnBuyView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+        PaymentController.sharedInstance().startPaypalService(this);
+
+        btnBuyView = (Button) this.findViewById(R.id.buy_view);
+        btnGalleryView = (Button) this.findViewById(R.id.gallery_view);
+        btnRateView = (Button) this.findViewById(R.id.rate_view);
+
+        btnRateView.setOnClickListener(this);
+        btnBuyView.setOnClickListener(this);
+        btnGalleryView.setOnClickListener(this);
+
+        btnBuyView.setSelected(true);
+
+        Fragment frag = BuyImageFragment.newInstance();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, frag);
+        fragmentTransaction.commit();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        PaymentController.sharedInstance().activityResult(requestCode, resultCode, data, this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PaymentController.sharedInstance().stopPaypalService(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Fragment frag;
+        FragmentManager fragmentManager;
+        FragmentTransaction fragmentTransaction;
+        switch (v.getId()){
+            case R.id.buy_view:
+                frag = BuyImageFragment.newInstance();
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, frag);
+                fragmentTransaction.commit();
+                btnBuyView.setSelected(true);
+                btnGalleryView.setSelected(false);
+                btnRateView.setSelected(false);
+                break;
+            case  R.id.gallery_view:
+                frag = ViewImageFragment.newInstance();
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, frag);
+                fragmentTransaction.commit();
+                btnBuyView.setSelected(false);
+                btnGalleryView.setSelected(true);
+                btnRateView.setSelected(false);
+                break;
+            case R.id.rate_view:
+                frag = RatingFragment.newInstance();
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, frag);
+                fragmentTransaction.commit();
+                btnBuyView.setSelected(false);
+                btnGalleryView.setSelected(false);
+                btnRateView.setSelected(true);
+                break;
+            default:
+                break;
+        }
+    }
+}

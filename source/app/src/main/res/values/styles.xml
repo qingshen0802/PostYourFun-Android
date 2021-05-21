@@ -1,0 +1,13 @@
+<resources>
+
+	<!-- Base application theme. -->
+	<style name="AppTheme">
+		<!-- Customize your theme here. -->
+	</style>
+
+	<style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+		<item name="android:progressDrawable">@xml/custom_ratingbar</item>
+		<item name="android:minHeight">32dip</item>
+		<item name="android:maxHeight">32dip</item>
+	</style>
+</resources>

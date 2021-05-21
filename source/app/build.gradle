@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+ext {
+    libsSrcDir = new File("${projectDir}/libs")
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.pyt.postyourfun"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+    }
+    signingConfigs {
+        release {
+            storeFile file("../key.jks")
+            storePassword "pyf_store_key"
+            keyAlias "pyf"
+            keyPassword "pyf_store_key"
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.3.0'
+    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'org.twitter4j:twitter4j-core:4.0.4'
+    compile 'com.amazonaws:aws-android-sdk-cognito:2.2.3'
+    compile 'com.amazonaws:aws-android-sdk-core:2.2.3'
+    compile 'com.amazonaws:aws-android-sdk-ddb:2.2.3'
+    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.2.3'
+    compile 'com.amazonaws:aws-android-sdk-s3:2.2.3'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.sromku:simple-fb:4.1.1'
+}

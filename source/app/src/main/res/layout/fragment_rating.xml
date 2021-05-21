@@ -1,0 +1,149 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:padding="10dp"
+	tools:context="com.pyt.postyourfun.Fragment.RatingFragment">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<ScrollView
+			android:id="@+id/scrollView2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/textView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:text="Selet your park"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+
+				<Spinner
+					android:id="@+id/theme_selecter"
+					android:layout_width="240dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:spinnerMode="dropdown" />
+
+				<TextView
+					android:id="@+id/textView2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_marginTop="5dp"
+					android:text="Select your ride"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+
+				<Spinner
+					android:id="@+id/ride_selector"
+					android:layout_width="240dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:spinnerMode="dropdown" />
+
+				<TextView
+					android:id="@+id/txt_thempark"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:layout_marginTop="15dp"
+					android:text="Rate your fun at The extreme thempark in Norway"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<TextView
+						android:id="@+id/textView3"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_gravity="center_vertical"
+						android:layout_marginTop="5dp"
+						android:text="Speed"
+						android:textAppearance="?android:attr/textAppearanceSmall" />
+
+					<RatingBar
+						android:id="@+id/speed_rate"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_gravity="right"
+						android:layout_marginRight="3dp"
+						android:stepSize="1.0" />
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<TextView
+						android:id="@+id/textView4"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_gravity="center_vertical"
+						android:layout_marginTop="5dp"
+						android:text="G-Force"
+						android:textAppearance="?android:attr/textAppearanceSmall" />
+
+					<RatingBar
+						android:id="@+id/g_force_rate"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_marginRight="3dp"
+						android:stepSize="1.0" />
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="horizontal">
+
+					<TextView
+						android:id="@+id/textView5"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_gravity="center_vertical"
+						android:layout_marginTop="5dp"
+						android:text="Adrenaline kick"
+						android:textAppearance="?android:attr/textAppearanceSmall" />
+
+					<RatingBar
+						android:id="@+id/adrenaline_rate"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_gravity="right"
+						android:stepSize="1.0" />
+				</RelativeLayout>
+
+				<Button
+					android:id="@+id/btn_fb_share"
+					android:layout_width="240dp"
+					android:layout_height="50dp"
+					android:layout_gravity="bottom|center_horizontal"
+					android:layout_marginBottom="10dp"
+					android:background="@xml/fb_share_btnselector" />
+
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+
+</FrameLayout>

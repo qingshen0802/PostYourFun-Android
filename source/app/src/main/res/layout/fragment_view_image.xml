@@ -1,0 +1,69 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	tools:context="com.pyt.postyourfun.Fragment.ViewImageFragment">
+
+	<!-- TODO: Update blank fragment layout -->
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="Gallery"
+			android:id="@+id/textView11"
+			android:layout_margin="16dp" />
+
+		<GridView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/image_gridView"
+			android:numColumns="2"
+			android:stretchMode="columnWidth"
+			android:horizontalSpacing="10dp"
+			android:verticalSpacing="10dp"
+			android:layout_below="@+id/textView11"
+			android:layout_above="@+id/linelayout"
+			android:layout_marginRight="8dp"
+			android:minHeight="240dp"
+			android:minWidth="320dp"
+			android:clickable="false" />
+
+		<LinearLayout
+			android:id="@+id/linelayout"
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_margin="16dp">
+
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Share with Friends"
+				android:id="@+id/btn_shareFriends"
+				android:layout_gravity="bottom|center_horizontal"
+				android:textColor="@android:color/white"
+				android:padding="3dp"
+				android:background="@xml/button_background"
+				android:layout_alignParentBottom="true"
+				android:layout_centerHorizontal="true" />
+		</LinearLayout>
+
+	</RelativeLayout>
+
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/expanedImageView"
+		android:scaleType="centerInside"
+		android:visibility="gone"
+		android:layout_gravity="center_vertical" />
+
+</FrameLayout>
