@@ -1,3 +1,0 @@
-password : pyf_store_key
-alias : pyf
-alias password : pyf_store_key
